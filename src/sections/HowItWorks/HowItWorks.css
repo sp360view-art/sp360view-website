@@ -1,0 +1,340 @@
+.process-section {
+  padding: 120px 0;
+
+  background: #ffffff;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.process-container {
+  width: min(1240px, 92%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.process-header {
+  margin-bottom: 65px;
+}
+
+.process-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: #777777;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.process-label span {
+  width: 30px;
+  height: 2px;
+
+  background: var(--color-gold);
+}
+
+.process-heading-row {
+  display: grid;
+
+  grid-template-columns: 1fr 0.65fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.process-heading-row h2 {
+  color: #171717;
+
+  font-size: clamp(50px, 6vw, 82px);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.process-heading-row h2 span {
+  display: block;
+
+  color: var(--color-gold);
+}
+
+.process-heading-row p {
+  max-width: 400px;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   PROCESS GRID
+========================= */
+
+.process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.process-item {
+  position: relative;
+
+  min-height: 330px;
+
+  padding: 28px;
+
+  background: #f7f7f5;
+
+  border: 1px solid #e6e6e6;
+
+  border-radius: 18px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.process-item:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(244, 180, 0, 0.55);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+.process-top {
+  display: flex;
+
+  align-items: center;
+}
+
+.process-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 50%;
+
+  color: #171717;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+.process-line {
+  flex: 1;
+
+  height: 1px;
+
+  margin-left: 15px;
+
+  background: #dddddd;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.process-icon {
+  width: 58px;
+  height: 58px;
+
+  margin-top: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 14px;
+
+  color: var(--color-gold);
+
+  font-size: 22px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.process-item:hover .process-icon {
+  background: var(--color-gold);
+
+  color: #171717;
+
+  border-color: var(--color-gold);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.process-item h3 {
+  margin-top: 24px;
+
+  color: #171717;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.process-item p {
+  max-width: 250px;
+
+  margin-top: 12px;
+
+  color: #777777;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.process-bottom {
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #dddddd;
+}
+
+.process-bottom span {
+  color: #999999;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.process-bottom strong {
+  color: #171717;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .process-heading-row {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-line {
+    display: none;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .process-section {
+    padding: 90px 0;
+  }
+
+  .process-heading-row h2 {
+    font-size: 50px;
+
+    letter-spacing: -2px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .process-item {
+    min-height: 270px;
+
+    padding: 24px;
+  }
+
+  .process-icon {
+    margin-top: 40px;
+  }
+
+  .process-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+}

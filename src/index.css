@@ -1,0 +1,46 @@
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f7f7f5;
+
+  --color-white: #171717;
+  --color-muted: #666666;
+
+  --color-gold: #f4b400;
+  --color-gold-light: #ffc928;
+
+  --color-border: #e8e8e8;
+
+  --color-black: #171717;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-white);
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}

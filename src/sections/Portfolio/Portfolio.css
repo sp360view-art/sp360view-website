@@ -1,0 +1,750 @@
+.portfolio {
+  padding: 120px 0;
+
+  background: #f7f7f5;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.portfolio-container {
+  width: min(1240px, 92%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.portfolio-header {
+  margin-bottom: 55px;
+}
+
+.portfolio-label {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+
+  color: #777777;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.portfolio-label span {
+  width: 30px;
+  height: 2px;
+
+  background: var(--color-gold);
+}
+
+.portfolio-heading-row {
+  display: grid;
+
+  grid-template-columns: 1fr 0.65fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.portfolio-heading-row h2 {
+  color: #171717;
+
+  font-size: clamp(50px, 6vw, 82px);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.portfolio-heading-row h2 span {
+  display: block;
+
+  color: var(--color-gold);
+}
+
+.portfolio-heading-row p {
+  max-width: 400px;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.portfolio-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+/* =========================================
+   PORTFOLIO
+========================================= */
+
+.portfolio {
+  width: 100%;
+  padding: 90px 0;
+
+  background: #f7f7f5;
+}
+
+.portfolio-container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.portfolio-header {
+  margin-bottom: 55px;
+}
+
+.portfolio-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #777777;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.portfolio-label span {
+  width: 30px;
+  height: 2px;
+
+  background: var(--color-gold);
+}
+
+
+.portfolio-heading-row {
+  display: grid;
+
+  grid-template-columns: 1fr 0.7fr;
+
+  gap: 60px;
+
+  align-items: end;
+}
+
+.portfolio-heading-row h2 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: clamp(55px, 6vw, 85px);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -4px;
+}
+
+.portfolio-heading-row h2 span {
+  display: block;
+
+  color: var(--color-gold);
+}
+
+.portfolio-heading-row p {
+  max-width: 420px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.portfolio-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 560px);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.portfolio-card {
+  display: block;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid #e5e5e5;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.portfolio-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #e5e5e2;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.portfolio-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.35)
+    );
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.portfolio-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+
+  color: #171717;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================
+   VIEW 360 BUTTON
+========================================= */
+
+.portfolio-view {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  background: var(--color-gold);
+
+  border-radius: 999px;
+
+  color: #171717;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.10);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.portfolio-card:hover .portfolio-view {
+  transform: translateY(-3px);
+
+  background: var(--color-gold-light);
+}
+
+.portfolio-view span:last-child {
+  font-size: 16px;
+}
+
+
+/* =========================================
+   CARD INFO
+========================================= */
+
+.portfolio-info {
+  padding: 22px 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.portfolio-category {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #999999;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+.portfolio-info h3 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.portfolio-location {
+  color: #777777;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.portfolio-footer {
+  margin-top: 25px;
+}
+
+.portfolio-footer p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .portfolio {
+    padding: 70px 0;
+  }
+
+  .portfolio-heading-row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .portfolio {
+    padding: 60px 0;
+  }
+
+  .portfolio-container {
+    width: 90%;
+  }
+
+  .portfolio-header {
+    margin-bottom: 35px;
+  }
+
+  .portfolio-heading-row h2 {
+    font-size: 50px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .portfolio-heading-row p {
+    font-size: 13px;
+  }
+
+  .portfolio-card {
+    border-radius: 17px;
+  }
+
+  .portfolio-info {
+    padding: 18px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .portfolio-location {
+    font-size: 10px;
+  }
+
+  .portfolio-view {
+    right: 12px;
+    bottom: 12px;
+
+    padding: 11px 14px;
+
+    font-size: 10px;
+  }
+}
+
+.portfolio-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.02),
+      rgba(0, 0, 0, 0.18)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.portfolio-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-radius: 50%;
+
+  color: #171717;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.portfolio-view {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px 14px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--color-gold);
+
+  color: #171717;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.portfolio-view span:last-child {
+  font-size: 14px;
+}
+
+.portfolio-card:hover .portfolio-view {
+  transform: translateY(-3px);
+
+  background: var(--color-gold-light);
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.portfolio-info {
+  padding: 22px 22px 24px;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.portfolio-category {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #999999;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.portfolio-info h3 {
+  color: #171717;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.portfolio-location {
+  align-self: flex-end;
+
+  color: #888888;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.portfolio-footer {
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #dddddd;
+}
+
+.portfolio-footer p {
+  color: #888888;
+
+  font-size: 12px;
+}
+
+.portfolio-footer a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition: color 0.25s ease;
+}
+
+.portfolio-footer a span {
+  color: var(--color-gold);
+
+  font-size: 16px;
+}
+
+.portfolio-footer a:hover {
+  color: var(--color-gold);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .portfolio-heading-row {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .portfolio {
+    padding: 90px 0;
+  }
+
+  .portfolio-heading-row h2 {
+    font-size: 50px;
+
+    letter-spacing: -2px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .portfolio-info {
+    flex-direction: column;
+  }
+
+  .portfolio-location {
+    align-self: flex-start;
+  }
+
+  .portfolio-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+}
