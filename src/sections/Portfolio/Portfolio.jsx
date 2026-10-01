@@ -1,33 +1,42 @@
 import "./Portfolio.css";
 
-const project = {
-  number: "01",
-  category: "REAL ESTATE",
-  title: "Premium Property",
-  location: "Pune, Maharashtra",
-  image: "/images/property-1.jpg",
-  tourUrl: "https://tours.sp360view.com/tours/Go61nOvfbG",
-};
+const projects = [
+  {
+    number: "01",
+    category: "REAL ESTATE",
+    title: "Premium Property",
+    location: "Pune, Maharashtra",
+    tourUrl: "https://tours.sp360view.com/tours/Go61nOvfbG",
+  },
+  {
+    number: "02",
+    category: "GYM",
+    title: "Fitness Experience",
+    location: "Pune, Maharashtra",
+    tourUrl: "https://tours.sp360view.com/tours/Pmgu4qkMo",
+  },
+  {
+    number: "03",
+    category: "RESORT",
+    title: "Resort Experience",
+    location: "Pune, Maharashtra",
+    tourUrl: "https://tours.sp360view.com/tours/JJcq9z6MN",
+  },
+];
 
 function Portfolio() {
   return (
     <section className="portfolio" id="work">
-
       <div className="portfolio-container">
 
-        {/* =========================================
-            HEADER
-        ========================================= */}
-
+        {/* HEADER */}
         <div className="portfolio-header">
-
           <div className="portfolio-label">
             <span></span>
             OUR EXPERIENCE
           </div>
 
           <div className="portfolio-heading-row">
-
             <h2>
               Explore
               <span> Our Spaces.</span>
@@ -37,92 +46,66 @@ function Portfolio() {
               Step inside some of the spaces we've transformed
               into immersive 360° experiences.
             </p>
-
           </div>
-
         </div>
 
-
-        {/* =========================================
-            SINGLE PROPERTY
-        ========================================= */}
-
+        {/* PROJECT CARDS */}
         <div className="portfolio-grid">
+          {projects.map((project) => (
+            <div className="portfolio-card" key={project.number}>
 
-          <a
-            href={project.tourUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="portfolio-card"
-          >
+              {/* 360° TOUR */}
+              <div className="portfolio-tour">
 
-            {/* IMAGE */}
+                <iframe
+                  src={project.tourUrl}
+                  title={`${project.title} 360° Virtual Tour`}
+                  allow="fullscreen; vr"
+                  allowFullScreen
+                ></iframe>
 
-            <div className="portfolio-image">
-
-              <img
-                src={project.image}
-                alt={project.title}
-              />
-
-              <div className="portfolio-image-overlay"></div>
-
-              <span className="portfolio-number">
-                {project.number}
-              </span>
-
-
-              {/* VIEW 360 BUTTON */}
-
-              <div className="portfolio-view">
-                <span>View 360°</span>
-                <span>↗</span>
-              </div>
-
-            </div>
-
-
-            {/* INFO */}
-
-            <div className="portfolio-info">
-
-              <div>
-
-                <span className="portfolio-category">
-                  {project.category}
+                <span className="portfolio-number">
+                  {project.number}
                 </span>
 
-                <h3>
-                  {project.title}
-                </h3>
+                <a
+                  href={project.tourUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="portfolio-view"
+                >
+                  <span>Open 360°</span>
+                  <span>↗</span>
+                </a>
 
               </div>
 
-              <span className="portfolio-location">
-                {project.location}
-              </span>
+              {/* PROJECT DETAILS */}
+              <div className="portfolio-info">
+
+                <div>
+                  <span className="portfolio-category">
+                    {project.category}
+                  </span>
+
+                  <h3>{project.title}</h3>
+                </div>
+
+                <span className="portfolio-location">
+                  {project.location}
+                </span>
+
+              </div>
 
             </div>
-
-          </a>
-
+          ))}
         </div>
 
-
-        {/* =========================================
-            FOOTER
-        ========================================= */}
-
         <div className="portfolio-footer">
-
-          <p>
-            More spaces. More experiences.
-          </p>
-
+          <p>More spaces. More experiences.</p>
         </div>
 
       </div>
-
     </section>
   );
 }
