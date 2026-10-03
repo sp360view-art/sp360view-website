@@ -1,21 +1,281 @@
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
 .process-section {
+  position: relative;
+
+  width: 100%;
+
   padding: 120px 0;
+
+  overflow: hidden;
 
   background: #ffffff;
 
   border-top: 1px solid var(--color-border);
 }
 
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .process-container {
+  position: relative;
+
+  z-index: 5;
+
   width: min(1240px, 92%);
 
   margin: 0 auto;
 }
 
 
-/* =========================
+/* =====================================================
+   PREMIUM BACKGROUND ANIMATION
+===================================================== */
+
+.process-background-animation {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND ORBITS
+===================================================== */
+
+.process-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(244, 180, 0, 0.12);
+
+  border-radius: 50%;
+}
+
+.process-orbit span {
+  position: absolute;
+
+  top: 50%;
+
+  right: -4px;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: rgba(244, 180, 0, 0.55);
+
+  box-shadow:
+    0 0 12px rgba(244, 180, 0, 0.25);
+}
+
+
+/* LARGE */
+
+.orbit-large {
+  width: 620px;
+
+  height: 620px;
+
+  top: -250px;
+
+  right: -180px;
+
+  animation:
+    backgroundOrbit 22s linear infinite;
+}
+
+.orbit-large span {
+  animation:
+    dotPulse 2.5s ease-in-out infinite;
+}
+
+
+/* MEDIUM */
+
+.orbit-medium {
+  width: 430px;
+
+  height: 430px;
+
+  top: -150px;
+
+  right: -80px;
+
+  border-color:
+    rgba(244, 180, 0, 0.09);
+
+  animation:
+    backgroundOrbitReverse 17s linear infinite;
+}
+
+.orbit-medium span {
+  width: 5px;
+
+  height: 5px;
+}
+
+
+/* SMALL */
+
+.orbit-small {
+  width: 260px;
+
+  height: 260px;
+
+  top: -65px;
+
+  right: 5px;
+
+  border-color:
+    rgba(244, 180, 0, 0.07);
+
+  animation:
+    backgroundOrbit 12s linear infinite;
+}
+
+.orbit-small span {
+  width: 4px;
+
+  height: 4px;
+}
+
+
+/* =====================================================
+   SOFT BACKGROUND GLOW
+===================================================== */
+
+.process-glow {
+  position: absolute;
+
+  width: 450px;
+
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.18;
+}
+
+
+/* TOP GLOW */
+
+.glow-one {
+  top: -250px;
+
+  right: -150px;
+
+  background:
+    rgba(244, 180, 0, 0.18);
+
+  animation:
+    glowFloat 8s ease-in-out infinite;
+}
+
+
+/* BOTTOM GLOW */
+
+.glow-two {
+  bottom: -300px;
+
+  left: -180px;
+
+  background:
+    rgba(244, 180, 0, 0.10);
+
+  animation:
+    glowFloatReverse 10s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   FLOATING DOTS
+===================================================== */
+
+.process-dots {
+  position: absolute;
+
+  inset: 0;
+}
+
+.process-dots span {
+  position: absolute;
+
+  width: 3px;
+
+  height: 3px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(23, 23, 23, 0.14);
+
+  animation:
+    floatingDot 5s ease-in-out infinite;
+}
+
+
+/* DOT POSITIONS */
+
+.process-dots span:nth-child(1) {
+  top: 22%;
+  left: 8%;
+
+  animation-delay: 0s;
+}
+
+.process-dots span:nth-child(2) {
+  top: 68%;
+  left: 18%;
+
+  animation-delay: 1s;
+}
+
+.process-dots span:nth-child(3) {
+  top: 35%;
+  left: 48%;
+
+  animation-delay: 2s;
+}
+
+.process-dots span:nth-child(4) {
+  top: 78%;
+  left: 55%;
+
+  animation-delay: 0.5s;
+}
+
+.process-dots span:nth-child(5) {
+  top: 25%;
+  right: 25%;
+
+  animation-delay: 1.5s;
+}
+
+.process-dots span:nth-child(6) {
+  top: 72%;
+  right: 10%;
+
+  animation-delay: 2.5s;
+}
+
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .process-header {
   margin-bottom: 65px;
@@ -23,6 +283,7 @@
 
 .process-label {
   display: flex;
+
   align-items: center;
 
   gap: 12px;
@@ -40,15 +301,23 @@
 
 .process-label span {
   width: 30px;
+
   height: 2px;
 
-  background: var(--color-gold);
+  background:
+    var(--color-gold);
 }
+
+
+/* =====================================================
+   HEADING
+===================================================== */
 
 .process-heading-row {
   display: grid;
 
-  grid-template-columns: 1fr 0.65fr;
+  grid-template-columns:
+    1fr 0.65fr;
 
   gap: 70px;
 
@@ -58,7 +327,8 @@
 .process-heading-row h2 {
   color: #171717;
 
-  font-size: clamp(50px, 6vw, 82px);
+  font-size:
+    clamp(50px, 6vw, 82px);
 
   font-weight: 800;
 
@@ -70,7 +340,8 @@
 .process-heading-row h2 span {
   display: block;
 
-  color: var(--color-gold);
+  color:
+    var(--color-gold);
 }
 
 .process-heading-row p {
@@ -84,22 +355,23 @@
 }
 
 
-/* =========================
+/* =====================================================
    PROCESS GRID
-========================= */
+===================================================== */
 
 .process-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:
+    repeat(4, 1fr);
 
   gap: 20px;
 }
 
 
-/* =========================
-   ITEM
-========================= */
+/* =====================================================
+   PROCESS CARD
+===================================================== */
 
 .process-item {
   position: relative;
@@ -107,6 +379,8 @@
   min-height: 330px;
 
   padding: 28px;
+
+  overflow: hidden;
 
   background: #f7f7f5;
 
@@ -121,18 +395,21 @@
 }
 
 .process-item:hover {
-  transform: translateY(-7px);
+  transform:
+    translateY(-7px);
 
-  border-color: rgba(244, 180, 0, 0.55);
+  border-color:
+    rgba(244, 180, 0, 0.55);
 
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.07);
+    0 20px 40px
+    rgba(0, 0, 0, 0.07);
 }
 
 
-/* =========================
-   TOP
-========================= */
+/* =====================================================
+   NUMBER
+===================================================== */
 
 .process-top {
   display: flex;
@@ -142,10 +419,13 @@
 
 .process-number {
   width: 42px;
+
   height: 42px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #ffffff;
@@ -159,7 +439,29 @@
   font-size: 10px;
 
   font-weight: 800;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
+
+.process-item:hover
+.process-number {
+  background:
+    var(--color-gold);
+
+  border-color:
+    var(--color-gold);
+
+  transform:
+    rotate(8deg);
+}
+
+
+/* =====================================================
+   CONNECTING LINE
+===================================================== */
 
 .process-line {
   flex: 1;
@@ -172,47 +474,649 @@
 }
 
 
-/* =========================
-   ICON
-========================= */
+/* =====================================================
+   ICON CONTAINER
+===================================================== */
 
 .process-icon {
-  width: 58px;
-  height: 58px;
+  position: relative;
 
-  margin-top: 55px;
+  width: 68px;
+
+  height: 68px;
+
+  margin-top: 48px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #ffffff;
 
   border: 1px solid #e2e2e2;
 
-  border-radius: 14px;
+  border-radius: 16px;
 
-  color: var(--color-gold);
-
-  font-size: 22px;
+  color:
+    var(--color-gold);
 
   transition:
     background 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.process-item:hover .process-icon {
-  background: var(--color-gold);
+.process-item:hover
+.process-icon {
+  background:
+    var(--color-gold);
 
   color: #171717;
 
-  border-color: var(--color-gold);
+  border-color:
+    var(--color-gold);
 }
 
 
-/* =========================
-   CONTENT
-========================= */
+/* =====================================================
+   01 — CAPTURE
+===================================================== */
+
+.capture-animation {
+  position: relative;
+
+  width: 42px;
+
+  height: 42px;
+}
+
+
+/* CAMERA LENS */
+
+.capture-lens {
+  position: absolute;
+
+  top: 10px;
+
+  left: 10px;
+
+  width: 22px;
+
+  height: 22px;
+
+  border: 2px solid currentColor;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  animation:
+    cameraPulse 2s ease-in-out infinite;
+}
+
+.capture-lens span {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    currentColor;
+
+  animation:
+    lensPulse 2s ease-in-out infinite;
+}
+
+
+/* CAMERA CORNERS */
+
+.capture-corner {
+  position: absolute;
+
+  width: 9px;
+
+  height: 9px;
+
+  border-color:
+    currentColor;
+
+  border-style: solid;
+}
+
+.capture-corner.top-left {
+  top: 0;
+
+  left: 0;
+
+  border-width:
+    2px 0 0 2px;
+}
+
+.capture-corner.top-right {
+  top: 0;
+
+  right: 0;
+
+  border-width:
+    2px 2px 0 0;
+}
+
+.capture-corner.bottom-left {
+  bottom: 0;
+
+  left: 0;
+
+  border-width:
+    0 0 2px 2px;
+}
+
+.capture-corner.bottom-right {
+  bottom: 0;
+
+  right: 0;
+
+  border-width:
+    0 2px 2px 0;
+}
+
+
+/* SCAN LINE */
+
+.capture-scan {
+  position: absolute;
+
+  left: 4px;
+
+  right: 4px;
+
+  top: 0;
+
+  height: 1px;
+
+  background:
+    currentColor;
+
+  box-shadow:
+    0 0 8px currentColor;
+
+  animation:
+    scanMove 2s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   CAPTURE ANIMATION
+===================================================== */
+
+@keyframes scanMove {
+
+  0% {
+    top: 2px;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    top: 39px;
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 2px;
+    opacity: 0;
+  }
+
+}
+
+@keyframes cameraPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      scale(1.08);
+  }
+
+}
+
+@keyframes lensPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(0.7);
+  }
+
+  50% {
+    transform:
+      scale(1.15);
+  }
+
+}
+
+
+/* =====================================================
+   02 — PROCESS
+===================================================== */
+
+.process-animation {
+  position: relative;
+
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.process-ring {
+  position: absolute;
+
+  border: 1.5px solid currentColor;
+
+  border-radius: 50%;
+}
+
+.ring-one {
+  width: 44px;
+
+  height: 44px;
+
+  border-top-color:
+    transparent;
+
+  border-bottom-color:
+    transparent;
+
+  animation:
+    processRotate 2.2s linear infinite;
+}
+
+.ring-two {
+  width: 31px;
+
+  height: 31px;
+
+  border-left-color:
+    transparent;
+
+  border-right-color:
+    transparent;
+
+  animation:
+    processRotateReverse 1.5s linear infinite;
+}
+
+.process-core {
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   PROCESS ROTATION
+===================================================== */
+
+@keyframes processRotate {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+@keyframes processRotateReverse {
+
+  from {
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      rotate(0deg);
+  }
+
+}
+
+
+/* =====================================================
+   03 — BUILD
+===================================================== */
+
+.build-animation {
+  position: relative;
+
+  width: 44px;
+
+  height: 44px;
+}
+
+.build-piece {
+  position: absolute;
+
+  width: 13px;
+
+  height: 13px;
+
+  border:
+    1.5px solid currentColor;
+
+  border-radius: 3px;
+}
+
+
+/* PIECES */
+
+.piece-one {
+  top: 2px;
+  left: 2px;
+
+  animation:
+    buildOne 2s ease-in-out infinite;
+}
+
+.piece-two {
+  top: 2px;
+  right: 2px;
+
+  animation:
+    buildTwo 2s ease-in-out infinite;
+}
+
+.piece-three {
+  bottom: 2px;
+  left: 2px;
+
+  animation:
+    buildThree 2s ease-in-out infinite;
+}
+
+.piece-four {
+  bottom: 2px;
+  right: 2px;
+
+  animation:
+    buildFour 2s ease-in-out infinite;
+}
+
+
+/* CENTER */
+
+.build-center {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  animation:
+    buildCenter 1.8s ease-in-out infinite;
+}
+
+
+/* BUILD ANIMATION */
+
+@keyframes buildOne {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(6px, 6px);
+  }
+
+}
+
+@keyframes buildTwo {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-6px, 6px);
+  }
+
+}
+
+@keyframes buildThree {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(6px, -6px);
+  }
+
+}
+
+@keyframes buildFour {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-6px, -6px);
+  }
+
+}
+
+@keyframes buildCenter {
+
+  0%,
+  100% {
+    opacity: 0.4;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.2);
+  }
+
+}
+
+
+/* =====================================================
+   04 — EXPERIENCE
+===================================================== */
+
+.experience-animation {
+  position: relative;
+
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* GLOBE */
+
+.experience-globe {
+  position: relative;
+
+  z-index: 3;
+
+  width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1.5px solid currentColor;
+
+  border-radius: 50%;
+
+  background:
+    #ffffff;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+
+/* ORBITS */
+
+.experience-orbit {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 45px;
+
+  height: 18px;
+
+  border:
+    1px solid currentColor;
+
+  border-radius: 50%;
+}
+
+.orbit-one {
+  animation:
+    orbitRotate 2.5s linear infinite;
+}
+
+.orbit-two {
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+
+  animation:
+    orbitRotateReverse 3s linear infinite;
+}
+
+.experience-orbit span {
+  position: absolute;
+
+  top: 50%;
+
+  right: -3px;
+
+  width: 6px;
+
+  height: 6px;
+
+  background:
+    currentColor;
+
+  border-radius: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+
+/* EXPERIENCE ROTATION */
+
+@keyframes orbitRotate {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+}
+
+@keyframes orbitRotateReverse {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(90deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-270deg);
+  }
+
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
 
 .process-item h3 {
   margin-top: 24px;
@@ -239,9 +1143,9 @@
 }
 
 
-/* =========================
+/* =====================================================
    BOTTOM
-========================= */
+===================================================== */
 
 .process-bottom {
   margin-top: 35px;
@@ -249,7 +1153,9 @@
   padding-top: 25px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   border-top: 1px solid #dddddd;
@@ -274,20 +1180,123 @@
 }
 
 
-/* =========================
+/* =====================================================
+   BACKGROUND KEYFRAMES
+===================================================== */
+
+@keyframes backgroundOrbit {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+@keyframes backgroundOrbitReverse {
+
+  from {
+    transform:
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      rotate(0deg);
+  }
+
+}
+
+@keyframes dotPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(0.7);
+
+    opacity: 0.35;
+  }
+
+  50% {
+    transform:
+      scale(1.4);
+
+    opacity: 0.9;
+  }
+
+}
+
+@keyframes glowFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-35px, 25px);
+  }
+
+}
+
+@keyframes glowFloatReverse {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(30px, -25px);
+  }
+
+}
+
+@keyframes floatingDot {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+
+    opacity: 0.2;
+  }
+
+  50% {
+    transform:
+      translateY(-15px);
+
+    opacity: 0.7;
+  }
+
+}
+
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 950px) {
 
   .process-heading-row {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 20px;
   }
 
   .process-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .process-line {
@@ -297,9 +1306,9 @@
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
@@ -314,7 +1323,8 @@
   }
 
   .process-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 14px;
   }
@@ -335,6 +1345,611 @@
     align-items: flex-start;
 
     gap: 12px;
+  }
+
+
+  /* MOBILE BACKGROUND */
+
+  .orbit-large {
+    width: 420px;
+
+    height: 420px;
+
+    top: -150px;
+
+    right: -180px;
+  }
+
+  .orbit-medium {
+    width: 300px;
+
+    height: 300px;
+
+    top: -90px;
+
+    right: -120px;
+  }
+
+  .orbit-small {
+    width: 190px;
+
+    height: 190px;
+
+    top: -40px;
+
+    right: -50px;
+  }
+
+  .process-glow {
+    width: 300px;
+
+    height: 300px;
+
+    filter:
+      blur(60px);
+  }
+
+  .process-dots span:nth-child(3),
+  .process-dots span:nth-child(4) {
+    display: none;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .process-heading-row h2 {
+    font-size: 45px;
+  }
+
+  .process-item {
+    padding: 22px;
+  }
+
+}
+/* =====================================================
+   MOVING COLORFUL CARD BACKGROUND
+===================================================== */
+
+.process-item {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Moving colorful background */
+
+.process-item::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180%;
+  height: 180%;
+
+  top: -40%;
+  left: -40%;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  opacity: 0.28;
+
+  filter: blur(45px);
+
+  background: radial-gradient(
+    circle at 20% 30%,
+    var(--card-color-1) 0%,
+    transparent 28%
+  );
+
+  animation:
+    cardColorMove 7s ease-in-out infinite;
+}
+
+
+/* Second moving color */
+
+.process-item::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150%;
+  height: 150%;
+
+  right: -60%;
+  bottom: -60%;
+
+  z-index: -2;
+
+  border-radius: 50%;
+
+  opacity: 0.22;
+
+  filter: blur(50px);
+
+  background: radial-gradient(
+    circle,
+    var(--card-color-2) 0%,
+    transparent 60%
+  );
+
+  animation:
+    cardColorMoveReverse 9s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   WHITE GLASS LAYER
+===================================================== */
+
+.process-item .process-top,
+.process-item .process-icon,
+.process-item h3,
+.process-item p {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* =====================================================
+   CAPTURE
+===================================================== */
+
+.process-capture {
+  --card-color-1: #00c6ff;
+  --card-color-2: #0072ff;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process-process {
+  --card-color-1: #8e2de2;
+  --card-color-2: #4a00e0;
+}
+
+
+/* =====================================================
+   BUILD
+===================================================== */
+
+.process-build {
+  --card-color-1: #ff512f;
+  --card-color-2: #dd2476;
+}
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.process-experience {
+  --card-color-1: #00c853;
+  --card-color-2: #00bcd4;
+}
+
+
+/* =====================================================
+   MOVING LIGHT BEAM
+===================================================== */
+
+.process-item {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.68)
+    );
+}
+
+
+.process-item:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 255, 255, 0.58)
+    );
+}
+
+
+/* Light moving across card */
+
+.process-item .process-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  top: -100px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8),
+      transparent 65%
+    );
+
+  filter: blur(15px);
+
+  opacity: 0;
+
+  animation:
+    lightSweep 5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   COLOR MOVEMENT
+===================================================== */
+
+@keyframes cardColorMove {
+
+  0% {
+    transform:
+      translate(-10%, -5%)
+      rotate(0deg)
+      scale(0.9);
+  }
+
+  25% {
+    transform:
+      translate(35%, 10%)
+      rotate(60deg)
+      scale(1.15);
+  }
+
+  50% {
+    transform:
+      translate(15%, 40%)
+      rotate(140deg)
+      scale(1.25);
+  }
+
+  75% {
+    transform:
+      translate(-25%, 20%)
+      rotate(220deg)
+      scale(1.05);
+  }
+
+  100% {
+    transform:
+      translate(-10%, -5%)
+      rotate(360deg)
+      scale(0.9);
+  }
+
+}
+
+
+@keyframes cardColorMoveReverse {
+
+  0% {
+    transform:
+      translate(10%, 10%)
+      scale(0.8);
+  }
+
+  25% {
+    transform:
+      translate(-30%, 0%)
+      scale(1.15);
+  }
+
+  50% {
+    transform:
+      translate(-10%, -35%)
+      scale(1.3);
+  }
+
+  75% {
+    transform:
+      translate(30%, -15%)
+      scale(1.05);
+  }
+
+  100% {
+    transform:
+      translate(10%, 10%)
+      scale(0.8);
+  }
+
+}
+
+
+/* =====================================================
+   LIGHT SWEEP
+===================================================== */
+
+@keyframes lightSweep {
+
+  0% {
+    top: -120px;
+    left: -120px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.5;
+  }
+
+  50% {
+    top: 20px;
+    left: 20px;
+    opacity: 0.8;
+  }
+
+  80% {
+    top: 100px;
+    left: 100px;
+    opacity: 0.4;
+  }
+
+  100% {
+    top: 180px;
+    left: 180px;
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   EXTRA MOVING SHINE
+===================================================== */
+
+.process-item {
+  background-image:
+    linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(255,255,255,0.55) 40%,
+      transparent 60%
+    );
+
+  background-size: 250% 100%;
+
+  animation:
+    cardShine 6s ease-in-out infinite;
+}
+
+
+@keyframes cardShine {
+
+  0% {
+    background-position:
+      200% 0;
+  }
+
+  50% {
+    background-position:
+      -50% 0;
+  }
+
+  100% {
+    background-position:
+      -50% 0;
+  }
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.process-item:hover::before {
+  opacity: 0.42;
+
+  filter: blur(35px);
+}
+
+.process-item:hover::after {
+  opacity: 0.32;
+
+  filter: blur(40px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .process-item::before {
+    opacity: 0.20;
+
+    filter: blur(40px);
+  }
+
+  .process-item::after {
+    opacity: 0.16;
+
+    filter: blur(45px);
+  }
+
+}
+
+
+
+/* =====================================================
+   CARD FLOATING ANIMATIONS
+===================================================== */
+
+.process-item {
+  will-change: transform;
+}
+
+/* Capture */
+
+.process-capture {
+  animation: captureCard 5s ease-in-out infinite;
+}
+
+
+/* Process */
+
+.process-process {
+  animation: processCard 5.5s ease-in-out infinite;
+}
+
+
+/* Build */
+
+.process-build {
+  animation: buildCard 4.8s ease-in-out infinite;
+}
+
+
+/* Experience */
+
+.process-experience {
+  animation: experienceCard 5.2s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   CAPTURE
+===================================================== */
+
+@keyframes captureCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+@keyframes processCard {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-6px)
+      rotate(0.5deg);
+  }
+
+}
+
+
+/* =====================================================
+   BUILD
+===================================================== */
+
+@keyframes buildCard {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-7px)
+      scale(1.015);
+  }
+
+}
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+@keyframes experienceCard {
+
+  0%,
+  100% {
+    transform:
+      translateX(0)
+      translateY(0);
+  }
+
+  25% {
+    transform:
+      translateX(3px)
+      translateY(-4px);
+  }
+
+  50% {
+    transform:
+      translateX(0)
+      translateY(-7px);
+  }
+
+  75% {
+    transform:
+      translateX(-3px)
+      translateY(-4px);
+  }
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.process-item:hover {
+  animation-play-state: paused;
+
+  transform:
+    translateY(-12px)
+    scale(1.015);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .process-capture,
+  .process-process,
+  .process-build,
+  .process-experience {
+    animation-duration: 6s;
+  }
+
+  .process-item:hover {
+    transform:
+      translateY(-5px);
   }
 
 }

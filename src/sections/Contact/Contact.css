@@ -1,292 +1,1540 @@
-/* =========================================
+/* =====================================================
    CONTACT SECTION
-========================================= */
+===================================================== */
 
 .contact-section {
+  position: relative;
+
   width: 100%;
+
   padding: 120px 0;
+
+  overflow: hidden;
+
   background: #f7f7f5;
 }
 
+
+/* =====================================================
+   AMBIENT BACKGROUND
+===================================================== */
+
+.contact-ambient {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   AMBIENT ORBS
+===================================================== */
+
+.ambient-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+
+.ambient-orb-one {
+  width: 380px;
+  height: 380px;
+
+  top: -220px;
+  left: -120px;
+
+  background:
+    rgba(244, 180, 0, 0.08);
+
+  animation:
+    ambientOrbOne 12s ease-in-out infinite;
+}
+
+
+.ambient-orb-two {
+  width: 300px;
+  height: 300px;
+
+  right: -120px;
+  bottom: -150px;
+
+  background:
+    rgba(244, 180, 0, 0.06);
+
+  animation:
+    ambientOrbTwo 15s ease-in-out infinite;
+}
+
+
+.ambient-orb-three {
+  width: 220px;
+  height: 220px;
+
+  top: 40%;
+  left: 45%;
+
+  background:
+    rgba(255, 210, 70, 0.035);
+
+  animation:
+    ambientOrbThree 10s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   AMBIENT ORB ANIMATION
+===================================================== */
+
+@keyframes ambientOrbOne {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(80px, 50px)
+      scale(1.2);
+  }
+
+}
+
+
+@keyframes ambientOrbTwo {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(-70px, -60px)
+      scale(1.15);
+  }
+
+}
+
+
+@keyframes ambientOrbThree {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-30px, 40px);
+  }
+
+}
+
+
+/* =====================================================
+   AMBIENT DOTS
+===================================================== */
+
+.ambient-dot {
+  position: absolute;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(244, 180, 0, 0.45);
+
+  box-shadow:
+    0 0 12px
+    rgba(244, 180, 0, 0.3);
+
+  animation:
+    ambientDotFloat 6s ease-in-out infinite;
+}
+
+
+.ambient-dot-one {
+  top: 20%;
+  left: 8%;
+}
+
+
+.ambient-dot-two {
+  top: 70%;
+  left: 14%;
+
+  animation-delay: 1.5s;
+}
+
+
+.ambient-dot-three {
+  top: 25%;
+  right: 10%;
+
+  animation-delay: 2.5s;
+}
+
+
+.ambient-dot-four {
+  bottom: 18%;
+  right: 18%;
+
+  animation-delay: 4s;
+}
+
+
+@keyframes ambientDotFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+
+    opacity: 0.25;
+  }
+
+  50% {
+    transform:
+      translateY(-18px);
+
+    opacity: 0.8;
+  }
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
 .contact-container {
+  position: relative;
+
+  z-index: 5;
+
   width: min(1200px, 92%);
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
   gap: 25px;
+
   align-items: stretch;
 }
 
 
-/* =========================================
-   LEFT CONTENT
-========================================= */
+/* =====================================================
+   LEFT DARK CARD
+===================================================== */
 
 .contact-content {
+  position: relative;
+
+  min-height: 680px;
+
   padding: 45px;
-  background: #171717;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    #171717;
+
   border-radius: 22px;
 
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.14);
+
+  animation:
+    contactCardFloat 7s ease-in-out infinite;
+}
+
+
+@keyframes contactCardFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-5px);
+  }
+
+}
+
+
+/* =====================================================
+   GOLDEN CARD LIGHT
+===================================================== */
+
+.contact-content::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -220px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 180, 0, 0.20) 0%,
+      rgba(244, 180, 0, 0.07) 32%,
+      transparent 70%
+    );
+
+  filter:
+    blur(20px);
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    darkCardGlow 9s ease-in-out infinite;
+}
+
+
+.contact-content::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  bottom: -180px;
+  left: -130px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 180, 0, 0.10),
+      transparent 70%
+    );
+
+  filter:
+    blur(25px);
+
+  pointer-events: none;
+
+  z-index: -2;
+
+  animation:
+    darkCardGlowReverse 11s ease-in-out infinite;
+}
+
+
+@keyframes darkCardGlow {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(0.9);
+
+    opacity: 0.6;
+  }
+
+  50% {
+    transform:
+      translate(-80px, 70px)
+      scale(1.2);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes darkCardGlowReverse {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(60px, -50px)
+      scale(1.2);
+  }
+
+}
+
+
+/* =====================================================
+   CONTENT INNER
+===================================================== */
+
+.contact-content-inner {
+  position: relative;
+
+  z-index: 10;
+
+  height: 100%;
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
 
-/* =========================================
+/* =====================================================
+   360 ORBIT SYSTEM
+===================================================== */
+
+.contact-orbit-system {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -95px;
+  right: -160px;
+
+  pointer-events: none;
+
+  opacity: 0.6;
+}
+
+
+/* =====================================================
+   ORBITS
+===================================================== */
+
+.contact-orbit {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.16);
+
+  border-radius: 50%;
+}
+
+
+.contact-orbit-one {
+  width: 410px;
+  height: 145px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(18deg);
+
+  animation:
+    orbitOne 14s linear infinite;
+}
+
+
+.contact-orbit-two {
+  width: 320px;
+  height: 110px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-32deg);
+
+  animation:
+    orbitTwo 11s linear infinite;
+}
+
+
+.contact-orbit-three {
+  width: 230px;
+  height: 80px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(58deg);
+
+  border-color:
+    rgba(244, 180, 0, 0.10);
+
+  animation:
+    orbitThree 8s linear infinite;
+}
+
+
+/* =====================================================
+   ORBIT DOTS
+===================================================== */
+
+.contact-orbit span {
+  position: absolute;
+
+  top: 50%;
+  right: -4px;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    #f4b400;
+
+  box-shadow:
+    0 0 15px
+    rgba(244, 180, 0, 0.7);
+}
+
+
+/* =====================================================
+   ORBIT CORE
+===================================================== */
+
+.contact-orbit-core {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 70px;
+  height: 70px;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.20);
+
+  border-radius: 50%;
+
+  background:
+    rgba(244, 180, 0, 0.04);
+
+  box-shadow:
+    inset 0 0 30px
+    rgba(244, 180, 0, 0.05);
+
+  animation:
+    corePulse 4s ease-in-out infinite;
+}
+
+
+.contact-orbit-core::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.12);
+
+  border-radius: 50%;
+
+  animation:
+    coreRing 3s linear infinite;
+}
+
+
+.contact-orbit-core span {
+  color:
+    rgba(244, 180, 0, 0.65);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ORBIT ANIMATIONS
+===================================================== */
+
+@keyframes orbitOne {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(18deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(378deg);
+  }
+
+}
+
+
+@keyframes orbitTwo {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(-32deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-392deg);
+  }
+
+}
+
+
+@keyframes orbitThree {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(58deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(418deg);
+  }
+
+}
+
+
+@keyframes corePulse {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(0.95);
+
+    opacity: 0.7;
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+
+    opacity: 1;
+  }
+
+}
+
+
+@keyframes coreRing {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.contact-particles {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+
+.contact-particles span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(244, 180, 0, 0.55);
+
+  box-shadow:
+    0 0 10px
+    rgba(244, 180, 0, 0.4);
+
+  animation:
+    particleFloat 5s ease-in-out infinite;
+}
+
+
+.contact-particles span:nth-child(1) {
+  top: 20%;
+  left: 15%;
+}
+
+
+.contact-particles span:nth-child(2) {
+  top: 45%;
+  right: 12%;
+
+  animation-delay: 1s;
+}
+
+
+.contact-particles span:nth-child(3) {
+  bottom: 20%;
+  left: 12%;
+
+  animation-delay: 2s;
+}
+
+
+.contact-particles span:nth-child(4) {
+  bottom: 35%;
+  right: 25%;
+
+  animation-delay: 3s;
+}
+
+
+.contact-particles span:nth-child(5) {
+  top: 65%;
+  left: 45%;
+
+  animation-delay: 1.5s;
+}
+
+
+.contact-particles span:nth-child(6) {
+  top: 15%;
+  left: 60%;
+
+  animation-delay: 3.5s;
+}
+
+
+@keyframes particleFloat {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(0.7);
+
+    opacity: 0.2;
+  }
+
+  50% {
+    transform:
+      translate(8px, -18px)
+      scale(1.3);
+
+    opacity: 0.9;
+  }
+
+}
+
+
+/* =====================================================
    LABEL
-========================================= */
+===================================================== */
 
 .contact-label {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
 
   margin-bottom: 22px;
 
   color: #bdbdbd;
+
   font-size: 11px;
+
   font-weight: 700;
+
   letter-spacing: 1.8px;
+
+  animation:
+    contactReveal 0.8s ease both;
 }
+
 
 .contact-label span {
   width: 30px;
   height: 3px;
-  background: var(--color-gold);
+
+  background:
+    var(--color-gold);
+
+  box-shadow:
+    0 0 14px
+    rgba(244, 180, 0, 0.5);
+
+  animation:
+    labelPulse 2.5s ease-in-out infinite;
 }
 
 
-/* =========================================
+@keyframes labelPulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform:
+      scaleX(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      scaleX(1.15);
+  }
+
+}
+
+
+/* =====================================================
    HEADING
-========================================= */
+===================================================== */
 
 .contact-content h2 {
   margin: 0 0 20px;
 
-  color: #ffffff;
+  color:
+    #ffffff;
 
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 0.98;
-  letter-spacing: -2px;
+  font-size:
+    clamp(42px, 5vw, 64px);
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -2px;
+
+  animation:
+    headingReveal 0.9s ease 0.1s both;
 }
+
 
 .contact-content h2 span {
   display: block;
-  color: var(--color-gold);
+
+  color:
+    var(--color-gold);
+
+  text-shadow:
+    0 0 25px
+    rgba(244, 180, 0, 0.08);
+
+  animation:
+    goldTextGlow 4s ease-in-out infinite;
 }
 
 
-/* =========================================
+@keyframes headingReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes goldTextGlow {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px
+      rgba(244, 180, 0, 0.04);
+  }
+
+  50% {
+    text-shadow:
+      0 0 28px
+      rgba(244, 180, 0, 0.25);
+  }
+
+}
+
+
+/* =====================================================
    INTRO
-========================================= */
+===================================================== */
 
 .contact-intro {
   max-width: 430px;
+
   margin-bottom: 45px;
 
-  color: #a9a9a9;
+  color:
+    #a9a9a9;
 
   font-size: 15px;
+
   line-height: 1.7;
+
+  animation:
+    contactReveal 0.8s ease 0.25s both;
 }
 
 
-/* =========================================
+/* =====================================================
    CONTACT DETAILS
-========================================= */
+===================================================== */
 
 .contact-details {
   display: flex;
+
   flex-direction: column;
+
   gap: 25px;
 }
 
+
 .contact-detail {
   display: flex;
+
   align-items: center;
+
   gap: 15px;
+
+  animation:
+    detailFloat 5s ease-in-out infinite;
 }
 
 
-/* =========================================
-   ICON
-========================================= */
+.contact-detail:nth-child(1) {
+  animation-delay: 0s;
+}
+
+
+.contact-detail:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+
+.contact-detail:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+
+@keyframes detailFloat {
+
+  0%,
+  100% {
+    transform:
+      translateX(0);
+  }
+
+  50% {
+    transform:
+      translateX(4px);
+  }
+
+}
+
+
+/* =====================================================
+   CONTACT ICON
+===================================================== */
 
 .contact-detail-icon {
+  position: relative;
+
   width: 48px;
   height: 48px;
 
   flex-shrink: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  background: var(--color-gold);
-  color: #171717;
+  background:
+    var(--color-gold);
+
+  color:
+    #171717;
 
   border-radius: 50%;
 
   font-size: 17px;
+
   font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 25px
+    rgba(244, 180, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 
-/* =========================================
+.contact-detail-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.25);
+
+  border-radius: 50%;
+
+  animation:
+    iconRipple 3s ease-out infinite;
+}
+
+
+.contact-detail:nth-child(2)
+.contact-detail-icon::before {
+  animation-delay: 1s;
+}
+
+
+.contact-detail:nth-child(3)
+.contact-detail-icon::before {
+  animation-delay: 2s;
+}
+
+
+.contact-detail-icon:hover {
+  transform:
+    scale(1.1)
+    rotate(8deg);
+
+  box-shadow:
+    0 12px 30px
+    rgba(244, 180, 0, 0.28);
+}
+
+
+@keyframes iconRipple {
+
+  0% {
+    transform:
+      scale(0.8);
+
+    opacity: 0.7;
+  }
+
+  70% {
+    transform:
+      scale(1.4);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform:
+      scale(1.4);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
    DETAIL TEXT
-========================================= */
+===================================================== */
 
 .contact-detail > div {
   display: flex;
+
   flex-direction: column;
+
   gap: 5px;
 }
 
+
 .contact-detail > div > span {
-  color: #777777;
+  color:
+    #777777;
 
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 1.3px;
 }
 
-.contact-detail a,
+
+.contact-detail a:not(.contact-detail-icon),
 .contact-detail p {
   margin: 0;
 
-  color: #ffffff;
+  color:
+    #ffffff;
 
   font-size: 15px;
+
   font-weight: 500;
 
-  transition: color 0.25s ease;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.contact-detail a:hover {
-  color: var(--color-gold);
+
+.contact-detail a:not(.contact-detail-icon):hover {
+  color:
+    var(--color-gold);
+
+  transform:
+    translateX(4px);
 }
 
 
-/* =========================================
-   FORM WRAPPER
-========================================= */
+/* =====================================================
+   RIGHT FORM CARD
+===================================================== */
 
 .contact-form-wrapper {
+  position: relative;
+
+  min-height: 680px;
+
   padding: 45px;
 
-  background: #ffffff;
+  overflow: hidden;
 
-  border: 1px solid #e4e4e4;
+  isolation: isolate;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border:
+    1px solid #e4e4e4;
+
   border-radius: 22px;
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.06);
+
+  animation:
+    formCardFloat 7s ease-in-out 0.7s infinite;
 }
 
 
-/* =========================================
+@keyframes formCardFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(5px);
+  }
+
+}
+
+
+/* =====================================================
+   FORM CARD GOLDEN LIGHT
+===================================================== */
+
+.contact-form-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  top: -250px;
+  right: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 180, 0, 0.08),
+      transparent 70%
+    );
+
+  filter:
+    blur(20px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation:
+    formGlow 9s ease-in-out infinite;
+}
+
+
+@keyframes formGlow {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      scale(0.9);
+  }
+
+  50% {
+    transform:
+      translate(-60px, 70px)
+      scale(1.2);
+  }
+
+}
+
+
+/* =====================================================
+   FORM LIGHT SWEEP
+===================================================== */
+
+.form-light {
+  position: absolute;
+
+  top: -20%;
+
+  left: -70%;
+
+  width: 35%;
+
+  height: 140%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 180, 0, 0.07),
+      transparent
+    );
+
+  transform:
+    skewX(-18deg);
+
+  animation:
+    formLightSweep 9s ease-in-out infinite;
+
+  z-index: 1;
+}
+
+
+@keyframes formLightSweep {
+
+  0% {
+    left: -70%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    left: 140%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 140%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   FORM ORBIT DECORATION
+===================================================== */
+
+.form-orbit-decoration {
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  top: -70px;
+  right: -65px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.14);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation:
+    formOrbit 12s linear infinite;
+}
+
+
+.form-orbit-decoration::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 15px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.08);
+
+  border-radius: 50%;
+}
+
+
+.form-orbit-decoration span {
+  position: absolute;
+
+  top: 50%;
+
+  right: -4px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-gold);
+
+  box-shadow:
+    0 0 12px
+    rgba(244, 180, 0, 0.45);
+}
+
+
+@keyframes formOrbit {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =====================================================
    FORM HEADER
-========================================= */
+===================================================== */
 
 .contact-form-header {
+  position: relative;
+
+  z-index: 5;
+
   margin-bottom: 30px;
+
+  animation:
+    contactReveal 0.8s ease 0.2s both;
 }
+
 
 .contact-form-header > span {
   display: block;
 
   margin-bottom: 7px;
 
-  color: #171717;
+  color:
+    #171717;
 
   font-size: 18px;
+
   font-weight: 800;
+
   letter-spacing: 0.3px;
 }
+
 
 .contact-form-header p {
   margin: 0;
 
-  color: #777777;
+  color:
+    #777777;
 
   font-size: 13px;
+
   line-height: 1.6;
 }
 
 
-/* =========================================
+/* =====================================================
    FORM
-========================================= */
+===================================================== */
 
 .contact-form {
+  position: relative;
+
+  z-index: 5;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 20px;
 }
 
 
-/* =========================================
-   FORM ROW
-========================================= */
-
 .form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 18px;
 }
 
 
-/* =========================================
+/* =====================================================
    FORM GROUP
-========================================= */
+===================================================== */
 
 .form-group {
   display: flex;
+
   flex-direction: column;
+
   gap: 8px;
 }
 
+
 .form-group label {
-  color: #444444;
+  color:
+    #444444;
 
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
 }
 
 
-/* =========================================
-   INPUT / TEXTAREA
-========================================= */
+/* =====================================================
+   INPUT
+===================================================== */
 
 .form-group input,
 .form-group textarea {
   width: 100%;
 
-  padding: 14px 15px;
+  padding:
+    14px 15px;
 
-  border: 1px solid #dddddd;
+  border:
+    1px solid #dddddd;
+
   border-radius: 9px;
 
-  background: #fafafa;
+  background:
+    #fafafa;
 
-  color: #171717;
+  color:
+    #171717;
 
   outline: none;
 
   font-size: 14px;
 
   transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
+
 
 .form-group input {
   height: 50px;
 }
+
 
 .form-group textarea {
   min-height: 125px;
@@ -294,163 +1542,780 @@
   resize: vertical;
 }
 
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #999999;
+  color:
+    #999999;
+
+  transition:
+    opacity 0.25s ease;
 }
 
 
-/* =========================================
+/* =====================================================
    INPUT FOCUS
-========================================= */
+===================================================== */
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--color-gold);
+  border-color:
+    var(--color-gold);
 
-  background: #ffffff;
+  background:
+    #ffffff;
 
-  box-shadow: 0 0 0 3px rgba(244, 180, 0, 0.12);
+  box-shadow:
+    0 0 0 3px
+    rgba(244, 180, 0, 0.10),
+    0 8px 20px
+    rgba(0, 0, 0, 0.04);
+
+  transform:
+    translateY(-2px);
 }
 
 
-/* =========================================
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity:
+    0.45;
+}
+
+
+/* =====================================================
    SUBMIT BUTTON
-========================================= */
+===================================================== */
 
 .contact-submit {
+  position: relative;
+
   width: 100%;
+
   min-height: 54px;
 
   margin-top: 5px;
 
+  overflow: hidden;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 10px;
 
-  border: none;
-  border-radius: 999px;
+  border:
+    none;
 
-  background: var(--color-gold);
-  color: #171717;
+  border-radius:
+    999px;
 
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
+  background:
+    var(--color-gold);
 
-  cursor: pointer;
+  color:
+    #171717;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.3px;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(244, 180, 0, 0.12);
 
   transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.contact-submit span {
-  font-size: 17px;
+
+.submit-text,
+.submit-arrow {
+  position: relative;
+
+  z-index: 3;
 }
+
+
+.submit-arrow {
+  font-size:
+    17px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* =====================================================
+   BUTTON SHINE
+===================================================== */
+
+.submit-shine {
+  position: absolute;
+
+  top: 0;
+
+  left: -100%;
+
+  width: 40%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.50),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  animation:
+    buttonShine 4s ease-in-out infinite;
+}
+
+
+@keyframes buttonShine {
+
+  0% {
+    left: -100%;
+  }
+
+  30% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
+
+
+/* =====================================================
+   BUTTON HOVER
+===================================================== */
 
 .contact-submit:hover {
-  transform: translateY(-2px);
+  transform:
+    translateY(-3px);
 
-  background: var(--color-gold-light);
+  background:
+    var(--color-gold-light);
 
-  box-shadow: 0 10px 25px rgba(244, 180, 0, 0.22);
+  box-shadow:
+    0 15px 35px
+    rgba(244, 180, 0, 0.25);
 }
+
+
+.contact-submit:hover
+.submit-arrow {
+  transform:
+    translate(4px, -4px);
+}
+
 
 .contact-submit:active {
-  transform: translateY(0);
+  transform:
+    translateY(0);
 }
 
 
-/* =========================================
+.contact-submit:disabled {
+  cursor:
+    not-allowed;
+
+  opacity:
+    0.7;
+
+  transform:
+    none;
+}
+
+
+/* =====================================================
+   GENERAL REVEAL
+===================================================== */
+
+@keyframes contactReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =====================================================
    TABLET
-========================================= */
+===================================================== */
 
 @media (max-width: 900px) {
+
   .contact-section {
-    padding: 90px 0;
+    padding:
+      90px 0;
   }
+
 
   .contact-container {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
+
 
   .contact-content {
-    padding: 40px;
+    min-height:
+      600px;
+
+    padding:
+      40px;
   }
 
+
   .contact-form-wrapper {
-    padding: 40px;
+    min-height:
+      auto;
+
+    padding:
+      40px;
   }
+
+
+  .contact-orbit-system {
+    right:
+      -130px;
+  }
+
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 600px) {
+
   .contact-section {
-    padding: 70px 0;
+    padding:
+      70px 0;
   }
+
 
   .contact-container {
-    width: 90%;
-    gap: 18px;
+    width:
+      90%;
+
+    gap:
+      18px;
   }
+
 
   .contact-content {
-    padding: 30px 25px;
-    border-radius: 17px;
+    min-height:
+      560px;
+
+    padding:
+      30px 25px;
+
+    border-radius:
+      18px;
   }
+
 
   .contact-content h2 {
-    font-size: 42px;
-    letter-spacing: -1.5px;
+    font-size:
+      42px;
+
+    letter-spacing:
+      -1.5px;
   }
+
 
   .contact-intro {
-    font-size: 14px;
-    margin-bottom: 35px;
+    font-size:
+      14px;
+
+    margin-bottom:
+      35px;
   }
+
+
+  .contact-orbit-system {
+    width:
+      300px;
+
+    height:
+      300px;
+
+    top:
+      -50px;
+
+    right:
+      -150px;
+
+    opacity:
+      0.45;
+  }
+
+
+  .contact-orbit-one {
+    width:
+      290px;
+
+    height:
+      105px;
+  }
+
+
+  .contact-orbit-two {
+    width:
+      230px;
+
+    height:
+      80px;
+  }
+
+
+  .contact-orbit-three {
+    width:
+      170px;
+
+    height:
+      60px;
+  }
+
+
+  .contact-orbit-core {
+    width:
+      55px;
+
+    height:
+      55px;
+  }
+
 
   .contact-form-wrapper {
-    padding: 28px 22px;
-    border-radius: 17px;
+    min-height:
+      auto;
+
+    padding:
+      28px 22px;
+
+    border-radius:
+      18px;
   }
+
 
   .form-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns:
+      1fr;
+
+    gap:
+      20px;
   }
+
 
   .contact-form-header > span {
-    font-size: 17px;
+    font-size:
+      17px;
   }
 
+
   .contact-detail-icon {
-    width: 43px;
-    height: 43px;
+    width:
+      43px;
+
+    height:
+      43px;
   }
+
+
+  .ambient-orb-one {
+    width:
+      250px;
+
+    height:
+      250px;
+  }
+
+
+  .ambient-orb-two {
+    width:
+      220px;
+
+    height:
+      220px;
+  }
+
 }
 
 
-/* =========================================
+/* =====================================================
    SMALL MOBILE
-========================================= */
+===================================================== */
 
 @media (max-width: 400px) {
-  .contact-content h2 {
-    font-size: 37px;
-  }
 
   .contact-content {
-    padding: 25px 20px;
+    min-height:
+      530px;
+
+    padding:
+      25px 20px;
   }
 
-  .contact-form-wrapper {
-    padding: 24px 18px;
+
+  .contact-content h2 {
+    font-size:
+      37px;
   }
+
+
+  .contact-form-wrapper {
+    padding:
+      24px 18px;
+  }
+
+
+  .contact-orbit-system {
+    right:
+      -175px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-content,
+  .contact-form-wrapper,
+  .contact-content::before,
+  .contact-content::after,
+  .contact-orbit,
+  .contact-orbit-core,
+  .contact-orbit-core::before,
+  .contact-particles span,
+  .contact-detail,
+  .contact-detail-icon,
+  .contact-detail-icon::before,
+  .contact-content h2,
+  .contact-content h2 span,
+  .contact-label,
+  .contact-label span,
+  .contact-intro,
+  .contact-form-header,
+  .form-light,
+  .form-orbit-decoration,
+  .contact-form-wrapper::before,
+  .submit-shine,
+  .ambient-orb,
+  .ambient-dot {
+    animation: none !important;
+  }
+
+}
+/* =====================================================
+   PREMIUM CONTACT ICON ANIMATION
+===================================================== */
+
+.contact-detail-icon {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    iconFloat 4s ease-in-out infinite,
+    iconGlow 3s ease-in-out infinite;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Different timing for each icon */
+
+.contact-detail:nth-child(1) .contact-detail-icon {
+  animation-delay: 0s, 0s;
+}
+
+.contact-detail:nth-child(2) .contact-detail-icon {
+  animation-delay: 0.7s, 0.7s;
+}
+
+.contact-detail:nth-child(3) .contact-detail-icon {
+  animation-delay: 1.4s, 1.4s;
+}
+
+
+/* =====================================================
+   FLOATING MOTION
+===================================================== */
+
+@keyframes iconFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-5px)
+      scale(1.035);
+  }
+
+}
+
+
+/* =====================================================
+   GOLDEN GLOW
+===================================================== */
+
+@keyframes iconGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 7px 18px
+      rgba(244, 180, 0, 0.10);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 32px
+      rgba(244, 180, 0, 0.32),
+      0 0 18px
+      rgba(244, 180, 0, 0.12);
+  }
+
+}
+
+
+/* =====================================================
+   ANIMATED OUTER RING
+===================================================== */
+
+.contact-detail-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -5px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.35);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  animation:
+    iconRing 3s ease-out infinite;
+}
+
+
+/* Stagger rings */
+
+.contact-detail:nth-child(1)
+.contact-detail-icon::before {
+  animation-delay: 0s;
+}
+
+.contact-detail:nth-child(2)
+.contact-detail-icon::before {
+  animation-delay: 1s;
+}
+
+.contact-detail:nth-child(3)
+.contact-detail-icon::before {
+  animation-delay: 2s;
+}
+
+
+@keyframes iconRing {
+
+  0% {
+    transform:
+      scale(0.85);
+
+    opacity: 0.8;
+  }
+
+  70% {
+    transform:
+      scale(1.45);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform:
+      scale(1.45);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL ROTATION ON ICON
+===================================================== */
+
+.contact-detail-icon {
+  overflow: visible;
+}
+
+.contact-detail-icon:hover {
+  transform:
+    translateY(-6px)
+    scale(1.12)
+    rotate(8deg) !important;
+
+  box-shadow:
+    0 14px 35px
+    rgba(244, 180, 0, 0.40),
+    0 0 25px
+    rgba(244, 180, 0, 0.18);
+}
+
+
+/* =====================================================
+   INNER SHINE
+===================================================== */
+
+.contact-detail-icon::after {
+  content: "";
+
+  position: absolute;
+
+  top: 5px;
+  left: 8px;
+
+  width: 12px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.35);
+
+  transform:
+    rotate(-35deg);
+
+  opacity: 0.7;
+
+  animation:
+    iconShine 3.5s ease-in-out infinite;
+}
+
+
+.contact-detail:nth-child(1)
+.contact-detail-icon::after {
+  animation-delay: 0s;
+}
+
+.contact-detail:nth-child(2)
+.contact-detail-icon::after {
+  animation-delay: 0.8s;
+}
+
+.contact-detail:nth-child(3)
+.contact-detail-icon::after {
+  animation-delay: 1.6s;
+}
+
+
+@keyframes iconShine {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform:
+      rotate(-35deg)
+      translate(0, 0);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform:
+      rotate(-35deg)
+      translate(4px, 3px);
+  }
+
+}
+
+
+/* =====================================================
+   ICON TEXT MICRO MOTION
+===================================================== */
+
+.contact-detail-icon {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .contact-detail-icon {
+    animation-duration:
+      4.5s,
+      3.5s;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-detail-icon,
+  .contact-detail-icon::before,
+  .contact-detail-icon::after {
+    animation: none !important;
+  }
+
 }

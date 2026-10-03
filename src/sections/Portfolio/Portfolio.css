@@ -1,88 +1,141 @@
+/* =========================================
+   PORTFOLIO
+========================================= */
+
 .portfolio {
   width: 100%;
-  padding: 90px 0;
+
+  padding: 100px 0;
+
   background: #f7f7f5;
 }
 
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .portfolio-container {
-  width: min(1240px, 92%);
+  width: min(1200px, 92%);
+
   margin: 0 auto;
 }
 
-/* HEADER */
+
+/* =========================================
+   HEADER
+========================================= */
 
 .portfolio-header {
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 .portfolio-label {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   margin-bottom: 18px;
 
-  color: #777;
-  font-size: 10px;
+  color: #777777;
+
+  font-size: 9px;
+
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
 .portfolio-label span {
   width: 28px;
+
   height: 2px;
+
   background: var(--color-gold);
 }
 
+
 .portfolio-heading-row {
   display: grid;
+
   grid-template-columns: 1.2fr 0.8fr;
+
   align-items: end;
-  gap: 40px;
+
+  gap: 50px;
 }
 
 .portfolio-heading-row h2 {
   margin: 0;
 
   color: #171717;
-  font-size: clamp(48px, 6vw, 82px);
-  line-height: 0.9;
-  letter-spacing: -4px;
+
+  font-size: clamp(55px, 7vw, 92px);
+
   font-weight: 800;
+
+  line-height: 0.88;
+
+  letter-spacing: -4px;
 }
 
 .portfolio-heading-row h2 span {
   display: block;
+
   color: var(--color-gold);
 }
 
 .portfolio-heading-row p {
-  max-width: 390px;
+  max-width: 400px;
+
   margin: 0 0 5px;
 
-  color: #666;
+  color: #666666;
+
   font-size: 14px;
+
   line-height: 1.7;
 }
 
-/* PROJECT GRID */
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+/* =========================================
+   PROJECT LIST
+========================================= */
+
+.portfolio-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 35px;
 }
 
-/* CARD */
+
+/* =========================================
+   PROJECT CARD
+========================================= */
 
 .portfolio-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 1.35fr 0.85fr;
+
+  min-height: 470px;
+
   overflow: hidden;
 
-  background: #fff;
+  background: #ffffff;
 
   border: 1px solid #e5e5e5;
-  border-radius: 20px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.07);
 
   transition:
     transform 0.3s ease,
@@ -90,124 +143,106 @@
 }
 
 .portfolio-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 
   box-shadow:
-    0 18px 45px rgba(0, 0, 0, 0.09);
+    0 28px 70px rgba(0, 0, 0, 0.11);
 }
 
-/* 360 TOUR */
+
+/* =========================================
+   360 TOUR
+========================================= */
 
 .portfolio-tour {
   position: relative;
 
-  width: 100%;
-  height: 360px;
+  min-height: 470px;
 
   overflow: hidden;
 
-  background: #111;
+  background: #eeeeec;
 }
 
 .portfolio-tour iframe {
   width: 100%;
+
   height: 100%;
+
+  min-height: 470px;
 
   display: block;
 
   border: none;
 }
 
-/* NUMBER */
+
+/* =========================================
+   NUMBER
+========================================= */
 
 .portfolio-number {
   position: absolute;
-  top: 18px;
-  left: 18px;
 
-  width: 46px;
-  height: 46px;
+  top: 20px;
+
+  left: 20px;
+
+  z-index: 3;
+
+  width: 44px;
+
+  height: 44px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
 
-  background: #fff;
-  color: #171717;
+  background: rgba(255, 255, 255, 0.94);
 
-  font-size: 12px;
-  font-weight: 800;
-
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-
-  pointer-events: none;
-}
-
-/* OPEN BUTTON */
-
-.portfolio-view {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 12px 18px;
-
-  border-radius: 999px;
-
-  background: var(--color-gold);
   color: #171717;
 
   font-size: 11px;
+
   font-weight: 800;
 
-  text-decoration: none;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
-.portfolio-view span:last-child {
-  font-size: 15px;
-}
 
-.portfolio-view:hover {
-  transform: translateY(-2px);
-  background: var(--color-gold-light);
-}
-
-/* PROJECT INFO */
+/* =========================================
+   INFORMATION
+========================================= */
 
 .portfolio-info {
-  min-height: 105px;
-
-  padding: 20px 22px;
-
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
 
-  gap: 15px;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 50px 45px;
+
+  background: #ffffff;
 }
 
 .portfolio-category {
-  display: block;
+  display: inline-block;
 
-  margin-bottom: 7px;
+  margin-bottom: 12px;
 
-  color: #999;
+  color: var(--color-gold);
 
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
 }
 
 .portfolio-info h3 {
@@ -215,61 +250,221 @@
 
   color: #171717;
 
-  font-size: 20px;
+  font-size: clamp(30px, 3vw, 45px);
+
   font-weight: 800;
-  letter-spacing: -0.4px;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
 }
+
+
+/* =========================================
+   LOCATION
+========================================= */
 
 .portfolio-location {
-  flex-shrink: 0;
+  display: flex;
 
-  color: #777;
+  flex-direction: column;
 
-  font-size: 10px;
-  font-weight: 500;
+  gap: 4px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eeeeee;
+
+  color: #444444;
+
+  font-size: 12px;
+
+  font-weight: 600;
 }
 
-/* FOOTER */
+.portfolio-location span {
+  color: #999999;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.portfolio-info p {
+  max-width: 420px;
+
+  margin-top: 22px;
+
+  color: #707070;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.portfolio-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+.portfolio-tour-button,
+.portfolio-enquire-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 45px;
+
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================
+   VIEW TOUR
+========================================= */
+
+.portfolio-tour-button {
+  background: var(--color-gold);
+
+  color: #171717;
+}
+
+.portfolio-tour-button:hover {
+  transform: translateY(-2px);
+
+  background: var(--color-gold-light);
+}
+
+
+/* =========================================
+   ENQUIRE
+========================================= */
+
+.portfolio-enquire-button {
+  border: 1px solid #dddddd;
+
+  background: #ffffff;
+
+  color: #171717;
+}
+
+.portfolio-enquire-button:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-gold);
+
+  background: #fff8df;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .portfolio-footer {
-  margin-top: 28px;
+  margin-top: 45px;
 
-  text-align: center;
+  padding-top: 25px;
+
+  border-top: 1px solid #dddddd;
 }
 
 .portfolio-footer p {
   margin: 0;
 
-  color: #999;
+  color: #999999;
 
-  font-size: 11px;
-  letter-spacing: 0.5px;
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
 }
 
-/* TABLET */
 
-@media (max-width: 1000px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .portfolio {
+    padding: 80px 0;
   }
 
-  .portfolio-card:last-child {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 11px);
-    margin: 0 auto;
-    width: 100%;
+  .portfolio-heading-row {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
   }
 
-  .portfolio-tour {
-    height: 380px;
+  .portfolio-heading-row p {
+    max-width: 550px;
+  }
+
+  .portfolio-card {
+    grid-template-columns: 1fr 0.85fr;
+
+    min-height: 420px;
+  }
+
+  .portfolio-tour,
+  .portfolio-tour iframe {
+    min-height: 420px;
+  }
+
+  .portfolio-info {
+    padding: 35px 28px;
   }
 }
 
-/* MOBILE */
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
+
   .portfolio {
-    padding: 65px 0;
+    padding: 70px 0;
+  }
+
+  .portfolio-container {
+    width: 90%;
   }
 
   .portfolio-header {
@@ -277,65 +472,490 @@
   }
 
   .portfolio-heading-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .portfolio-heading-row h2 {
     font-size: 52px;
+
+    line-height: 0.92;
+
     letter-spacing: -2.5px;
   }
 
   .portfolio-heading-row p {
     font-size: 12px;
+
+    line-height: 1.6;
   }
 
-  .portfolio-grid {
+
+  /* =====================================
+     MOBILE CARD
+  ===================================== */
+
+  .portfolio-list {
+    gap: 25px;
+  }
+
+  .portfolio-card {
     grid-template-columns: 1fr;
-    gap: 18px;
+
+    min-height: auto;
+
+    border-radius: 20px;
   }
 
-  .portfolio-card:last-child {
-    grid-column: auto;
-    max-width: none;
-  }
+
+  /* =====================================
+     MOBILE 360 VIEW
+  ===================================== */
 
   .portfolio-tour {
-    height: 350px;
+    min-height: 360px;
+
+    height: 360px;
   }
 
+  .portfolio-tour iframe {
+    min-height: 360px;
+
+    height: 360px;
+  }
+
+
+  /* =====================================
+     MOBILE INFO
+  ===================================== */
+
   .portfolio-info {
-    min-height: 95px;
-    padding: 18px;
+    padding: 28px 22px 30px;
   }
 
   .portfolio-info h3 {
-    font-size: 18px;
+    font-size: 31px;
+
+    letter-spacing: -1px;
+  }
+
+  .portfolio-location {
+    margin-top: 20px;
+
+    padding-top: 16px;
+  }
+
+  .portfolio-info p {
+    margin-top: 18px;
+
+    font-size: 12px;
+  }
+
+
+  /* =====================================
+     MOBILE BUTTONS
+  ===================================== */
+
+  .portfolio-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 24px;
+  }
+
+  .portfolio-tour-button,
+  .portfolio-enquire-button {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 0 10px;
+
+    font-size: 10px;
   }
 }
 
-/* SMALL MOBILE */
 
-@media (max-width: 420px) {
-  .portfolio-tour {
-    height: 300px;
-  }
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
 
   .portfolio-heading-row h2 {
-    font-size: 44px;
+    font-size: 45px;
   }
 
-  .portfolio-view {
-    right: 12px;
-    bottom: 12px;
-    padding: 10px 14px;
+  .portfolio-tour,
+  .portfolio-tour iframe {
+    min-height: 320px;
+
+    height: 320px;
   }
 
-  .portfolio-number {
-    top: 12px;
-    left: 12px;
-
-    width: 40px;
-    height: 40px;
+  .portfolio-info h3 {
+    font-size: 28px;
   }
+
+  .portfolio-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   PREMIUM PORTFOLIO CARD ANIMATION
+===================================================== */
+
+.portfolio-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  /* existing styles remain */
+}
+
+
+/* =========================
+   MOVING GOLDEN BORDER
+========================= */
+
+.portfolio-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -2px;
+
+  z-index: -1;
+
+  border-radius: 25px;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 250deg,
+    rgba(244, 180, 0, 0.05) 280deg,
+    rgba(244, 180, 0, 0.8) 315deg,
+    rgba(255, 210, 70, 0.15) 340deg,
+    transparent 360deg
+  );
+
+  animation: portfolioBorder 7s linear infinite;
+}
+
+
+/* White layer keeps card clean */
+
+.portfolio-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  z-index: -1;
+
+  border-radius: 23px;
+
+  background: #ffffff;
+}
+
+
+@keyframes portfolioBorder {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   360° TOUR SUBTLE MOVEMENT
+===================================================== */
+
+.portfolio-tour {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* subtle cinematic movement */
+
+.portfolio-tour iframe {
+  transform-origin: center center;
+
+  animation:
+    portfolioTourMotion 12s ease-in-out infinite;
+}
+
+
+@keyframes portfolioTourMotion {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.018);
+  }
+
+}
+
+
+/* =====================================================
+   GOLDEN LIGHT SWEEP ON TOUR
+===================================================== */
+
+.portfolio-tour::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -40%;
+
+  width: 25%;
+  height: 100%;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+
+  transform: skewX(-18deg);
+
+  animation:
+    tourLightSweep 7s ease-in-out infinite;
+}
+
+
+@keyframes tourLightSweep {
+
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    left: 120%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   NUMBER PULSE
+===================================================== */
+
+.portfolio-number {
+  animation:
+    portfolioNumberPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes portfolioNumberPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.10);
+
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 25px rgba(244, 180, 0, 0.25);
+
+    transform: scale(1.05);
+  }
+
+}
+
+
+/* =====================================================
+   RIGHT SIDE LIGHT SWEEP
+===================================================== */
+
+.portfolio-info {
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+.portfolio-info::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 45%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 180, 0, 0.055),
+      transparent
+    );
+
+  transform: skewX(-15deg);
+
+  animation:
+    infoLightSweep 9s ease-in-out infinite;
+}
+
+
+@keyframes infoLightSweep {
+
+  0% {
+    left: -100%;
+  }
+
+  25% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.portfolio-card:hover {
+  transform:
+    translateY(-9px);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* Pause iframe zoom slightly on hover */
+
+.portfolio-card:hover
+.portfolio-tour iframe {
+  animation-play-state: paused;
+
+  transform:
+    scale(1.025);
+}
+
+
+/* =====================================================
+   BUTTON MICRO ANIMATION
+===================================================== */
+
+.portfolio-tour-button span,
+.portfolio-enquire-button span {
+  display: inline-block;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.portfolio-tour-button:hover span {
+  transform:
+    translate(3px, -3px);
+}
+
+
+.portfolio-enquire-button:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+/* =====================================================
+   DIFFERENT TIMING FOR EACH CARD
+===================================================== */
+
+.portfolio-card:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+.portfolio-card:nth-child(2)::before {
+  animation-delay: -2s;
+}
+
+.portfolio-card:nth-child(3)::before {
+  animation-delay: -4s;
+}
+
+.portfolio-card:nth-child(1)
+.portfolio-number {
+  animation-delay: 0s;
+}
+
+.portfolio-card:nth-child(2)
+.portfolio-number {
+  animation-delay: 0.8s;
+}
+
+.portfolio-card:nth-child(3)
+.portfolio-number {
+  animation-delay: 1.6s;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .portfolio-card::before {
+    animation-duration: 8s;
+  }
+
+  .portfolio-tour iframe {
+    animation-duration: 15s;
+  }
+
+  .portfolio-tour::after {
+    animation-duration: 9s;
+  }
+
+  .portfolio-card:hover {
+    transform:
+      translateY(-4px);
+  }
+
 }

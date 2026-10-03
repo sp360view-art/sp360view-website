@@ -39,7 +39,9 @@ function Contact() {
         body: JSON.stringify(formData),
       });
 
-      alert("Thank you! Your enquiry has been submitted successfully.");
+      alert(
+        "Thank you! Your enquiry has been submitted successfully."
+      );
 
       setFormData({
         name: "",
@@ -48,14 +50,12 @@ function Contact() {
         business: "",
         message: "",
       });
-
     } catch (error) {
       console.error("Submission Error:", error);
 
       alert(
         "Something went wrong. Please try again."
       );
-
     } finally {
       setIsSubmitting(false);
     }
@@ -64,76 +64,158 @@ function Contact() {
   return (
     <section className="contact-section" id="contact">
 
+      {/* =================================================
+          AMBIENT BACKGROUND
+      ================================================= */}
+
+      <div className="contact-ambient">
+
+        <span className="ambient-orb ambient-orb-one"></span>
+        <span className="ambient-orb ambient-orb-two"></span>
+        <span className="ambient-orb ambient-orb-three"></span>
+
+        <span className="ambient-dot ambient-dot-one"></span>
+        <span className="ambient-dot ambient-dot-two"></span>
+        <span className="ambient-dot ambient-dot-three"></span>
+        <span className="ambient-dot ambient-dot-four"></span>
+
+      </div>
+
+
       <div className="contact-container">
 
-        {/* LEFT SIDE */}
+        {/* =================================================
+            LEFT SIDE
+        ================================================= */}
 
         <div className="contact-content">
 
-          <div className="contact-label">
-            <span></span>
-            LET'S CONNECT
+          {/* BACKGROUND ORBITS */}
+
+          <div className="contact-orbit-system">
+
+            <div className="contact-orbit contact-orbit-one">
+              <span></span>
+            </div>
+
+            <div className="contact-orbit contact-orbit-two">
+              <span></span>
+            </div>
+
+            <div className="contact-orbit contact-orbit-three">
+              <span></span>
+            </div>
+
+            <div className="contact-orbit-core">
+              <span>360°</span>
+            </div>
+
           </div>
 
-          <h2>
-            Ready To
-            <span> Go 360°?</span>
-          </h2>
 
-          <p className="contact-intro">
-            Tell us about your space and let's create
-            an immersive experience your customers
-            will remember.
-          </p>
+          {/* FLOATING PARTICLES */}
 
-          <div className="contact-details">
+          <div className="contact-particles">
 
-            <div className="contact-detail">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-              <span className="contact-detail-icon">
-                ↗
-              </span>
+          </div>
 
-              <div>
-                <span>CALL US</span>
 
-                <a href="tel:+919158591152">
-                  +91 91585 91152
-                </a>
-              </div>
+          {/* CONTENT */}
 
+          <div className="contact-content-inner">
+
+            <div className="contact-label">
+              <span></span>
+              LET'S CONNECT
             </div>
 
 
-            <div className="contact-detail">
+            <h2>
+              Ready To
+              <span>Go 360°?</span>
+            </h2>
 
-              <span className="contact-detail-icon">
-                @
-              </span>
 
-              <div>
-                <span>EMAIL US</span>
+            <p className="contact-intro">
+              Tell us about your space and let's create
+              an immersive experience your customers
+              will remember.
+            </p>
 
-                <a href="mailto:sp360view@gmail.com">
-                  sp360view@gmail.com
+
+            {/* CONTACT DETAILS */}
+
+            <div className="contact-details">
+
+              {/* CALL */}
+
+              <div className="contact-detail">
+
+                <a
+                  href="tel:+919158591152"
+                  className="contact-detail-icon"
+                  aria-label="Call SP 360VIEW"
+                >
+                  ↗
                 </a>
+
+                <div>
+                  <span>CALL US</span>
+
+                  <a href="tel:+919158591152">
+                    +91 91585 91152
+                  </a>
+                </div>
+
               </div>
 
-            </div>
+
+              {/* EMAIL */}
+
+              <div className="contact-detail">
+
+                <a
+                  href="mailto:sp360view@gmail.com"
+                  className="contact-detail-icon"
+                  aria-label="Email SP 360VIEW"
+                >
+                  @
+                </a>
+
+                <div>
+                  <span>EMAIL US</span>
+
+                  <a href="mailto:sp360view@gmail.com">
+                    sp360view@gmail.com
+                  </a>
+                </div>
+
+              </div>
 
 
-            <div className="contact-detail">
+              {/* LOCATION */}
 
-              <span className="contact-detail-icon">
-                ◉
-              </span>
+              <div className="contact-detail">
 
-              <div>
-                <span>LOCATION</span>
+                <span className="contact-detail-icon">
+                  ◉
+                </span>
 
-                <p>
-                  Pune, Maharashtra
-                </p>
+                <div>
+                  <span>LOCATION</span>
+
+                  <p>
+                    Pune, Maharashtra
+                  </p>
+                </div>
+
               </div>
 
             </div>
@@ -143,9 +225,22 @@ function Contact() {
         </div>
 
 
-        {/* RIGHT SIDE FORM */}
+        {/* =================================================
+            RIGHT SIDE FORM
+        ================================================= */}
 
         <div className="contact-form-wrapper">
+
+          {/* FORM DECORATION */}
+
+          <div className="form-orbit-decoration">
+            <span></span>
+          </div>
+
+          <div className="form-light"></div>
+
+
+          {/* FORM HEADER */}
 
           <div className="contact-form-header">
 
@@ -159,6 +254,8 @@ function Contact() {
 
           </div>
 
+
+          {/* FORM */}
 
           <form
             className="contact-form"
@@ -264,7 +361,7 @@ function Contact() {
             </div>
 
 
-            {/* SUBMIT BUTTON */}
+            {/* SUBMIT */}
 
             <button
               type="submit"
@@ -272,14 +369,19 @@ function Contact() {
               disabled={isSubmitting}
             >
 
-              {isSubmitting
-                ? "Sending..."
-                : "Send Enquiry"
-              }
+              <span className="submit-text">
+                {isSubmitting
+                  ? "Sending..."
+                  : "Send Enquiry"}
+              </span>
 
               {!isSubmitting && (
-                <span>↗</span>
+                <span className="submit-arrow">
+                  ↗
+                </span>
               )}
+
+              <span className="submit-shine"></span>
 
             </button>
 

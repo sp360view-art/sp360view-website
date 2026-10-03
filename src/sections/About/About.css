@@ -1,8 +1,16 @@
 .about-section {
+  position: relative;
+  width: 100%;
   padding: 140px 0 0;
+  overflow: hidden;
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
 }
+
+
+/* =========================
+   MAIN
+========================= */
 
 .about-container {
   width: min(1200px, 92%);
@@ -10,7 +18,8 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+
+  gap: 90px;
   align-items: center;
 }
 
@@ -18,6 +27,11 @@
 /* =========================
    CONTENT
 ========================= */
+
+.about-content {
+  position: relative;
+  z-index: 5;
+}
 
 .about-label {
   display: flex;
@@ -29,13 +43,13 @@
   color: var(--color-gold);
 
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2.5px;
 }
 
 .about-label span {
   width: 28px;
-  height: 1px;
+  height: 2px;
   background: var(--color-gold);
 }
 
@@ -46,6 +60,7 @@
 
   font-size: clamp(48px, 6vw, 76px);
   font-weight: 400;
+
   line-height: 0.98;
   letter-spacing: -3px;
 }
@@ -91,16 +106,17 @@
   padding: 15px 22px;
 
   background: var(--color-gold);
-  color: #08090A;
+  color: #08090a;
 
   border-radius: 999px;
 
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
 
   transition:
     transform 0.3s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about-button span {
@@ -109,13 +125,18 @@
 
 .about-button:hover {
   transform: translateY(-3px);
+
   background: var(--color-gold-light);
+
+  box-shadow:
+    0 12px 30px
+    rgba(244, 180, 0, 0.25);
 }
 
 
-/* =========================
-   VISUAL
-========================= */
+/* =====================================================
+   360 VISUAL
+===================================================== */
 
 .about-visual {
   position: relative;
@@ -129,230 +150,590 @@
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  overflow: visible;
 
-  border: 1px solid var(--color-border);
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(201, 169, 110, 0.14),
-      transparent 55%
+      rgba(244, 180, 0, 0.10),
+      transparent 65%
     );
 }
 
 
 /* =========================
-   ORBITS
+   GLOW
 ========================= */
 
-.about-orbit {
+.about-glow {
   position: absolute;
 
-  border: 1px solid rgba(201, 169, 110, 0.25);
+  width: 260px;
+  height: 260px;
 
   border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 180, 0, 0.16),
+      transparent 70%
+    );
+
+  filter: blur(25px);
+
+  animation:
+    glowPulse 5s ease-in-out infinite;
 }
 
-.orbit-one {
-  width: 82%;
-  height: 82%;
 
-  animation: aboutRotate 18s linear infinite;
+/* =====================================================
+   ORBIT STAGE
+===================================================== */
+
+.orbit-stage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.orbit-two {
-  width: 62%;
-  height: 62%;
+
+/* =====================================================
+   BASIC ORBIT
+===================================================== */
+
+.orbit {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border-radius: 50%;
+
+  transform-origin: center center;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   OUTER
+===================================================== */
+
+.orbit-outer {
+  width: 90%;
+  height: 90%;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.18);
+
+  transform:
+    translate(-50%, -50%);
+
+  animation:
+    outerRotate 18s linear infinite;
+}
+
+
+/* =====================================================
+   MIDDLE
+===================================================== */
+
+.orbit-middle {
+  width: 68%;
+  height: 68%;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.20);
 
   border-style: dashed;
 
-  animation: aboutRotateReverse 14s linear infinite;
-}
+  transform:
+    translate(-50%, -50%);
 
-.orbit-three {
-  width: 40%;
-  height: 40%;
-
-  border-color: rgba(201, 169, 110, 0.45);
-
-  animation: aboutRotate 10s linear infinite;
+  animation:
+    middleRotate 13s linear infinite;
 }
 
 
-/* =========================
+/* =====================================================
+   INNER
+===================================================== */
+
+.orbit-inner {
+  width: 46%;
+  height: 46%;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.30);
+
+  transform:
+    translate(-50%, -50%);
+
+  animation:
+    innerRotate 9s linear infinite;
+}
+
+
+/* =====================================================
+   WORD
+===================================================== */
+
+.orbit-word {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  min-width: 110px;
+  height: 31px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background: #202020;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.25);
+
+  color: var(--color-gold);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   KEEP WORDS STRAIGHT
+===================================================== */
+
+.orbit-outer .orbit-word {
+  animation:
+    outerWord 18s linear infinite;
+}
+
+.orbit-middle .orbit-word {
+  animation:
+    middleWord 13s linear infinite;
+}
+
+.orbit-inner .orbit-word {
+  animation:
+    innerWord 9s linear infinite;
+}
+
+
+/* =====================================================
    CENTER
-========================= */
+===================================================== */
 
 .about-center {
-  position: relative;
-  z-index: 3;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  z-index: 20;
 
   width: 150px;
   height: 150px;
 
+  transform:
+    translate(-50%, -50%);
+
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(201, 169, 110, 0.5);
+  gap: 7px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.45);
+
   border-radius: 50%;
 
-  background: #0b0c0d;
+  background: #090909;
 
   box-shadow:
-    0 0 70px rgba(201, 169, 110, 0.12);
+    0 0 60px
+    rgba(244, 180, 0, 0.12);
+
+  animation:
+    centerPulse 4s ease-in-out infinite;
+}
+
+.about-center::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -15px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.14);
+
+  border-radius: 50%;
+
+  animation:
+    centerRing 5s linear infinite;
+}
+
+.about-center::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -30px;
+
+  border:
+    1px solid
+    rgba(244, 180, 0, 0.07);
+
+  border-radius: 50%;
+
+  animation:
+    centerRing 8s linear infinite reverse;
 }
 
 .about-center strong {
-  margin: 3px 0;
-
   color: var(--color-gold);
 
-  font-size: 38px;
+  font-size: 42px;
   font-weight: 500;
+
+  line-height: 0.9;
+  letter-spacing: -2px;
+
+  text-shadow:
+    0 0 25px
+    rgba(244, 180, 0, 0.20);
 }
 
-.about-center-small {
-  color: var(--color-muted);
+.about-center span {
+  color: #777777;
 
-  font-size: 8px;
+  font-size: 7px;
+  font-weight: 600;
+
   letter-spacing: 2px;
 }
 
 
-/* =========================
-   FLOATING LABELS
-========================= */
-
-.about-floating {
-  position: absolute;
-  z-index: 5;
-
-  padding: 8px 12px;
-
-  background: rgba(8, 9, 10, 0.85);
-
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-
-  color: var(--color-gold);
-
-  font-size: 8px;
-  letter-spacing: 1.5px;
-
-  backdrop-filter: blur(10px);
-}
-
-.about-floating-one {
-  top: 20%;
-  right: 8%;
-}
-
-.about-floating-two {
-  bottom: 22%;
-  left: 7%;
-}
-
-.about-floating-three {
-  top: 48%;
-  right: 4%;
-}
-
-
-/* =========================
+/* =====================================================
    PROCESS
-========================= */
+===================================================== */
 
 .about-process {
   width: min(1200px, 92%);
-  margin: 120px auto 0;
+
+  margin:
+    120px auto 0;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
-  border-top: 1px solid var(--color-border);
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid
+    var(--color-border);
 }
 
 .about-process-item {
+  position: relative;
+
+  min-height: 150px;
+
   padding: 35px 30px;
 
   display: flex;
+
   gap: 20px;
 
-  border-right: 1px solid var(--color-border);
+  border-right:
+    1px solid
+    var(--color-border);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
 }
 
 .about-process-item:last-child {
   border-right: none;
 }
 
+.about-process-item:hover {
+  transform:
+    translateY(-7px);
+
+  background:
+    rgba(244, 180, 0, 0.04);
+}
+
 .about-process-number {
-  color: var(--color-gold);
+  color:
+    var(--color-gold);
 
   font-size: 11px;
-  letter-spacing: 1px;
+  font-weight: 800;
 }
 
 .about-process-item h3 {
   margin-bottom: 8px;
 
-  color: var(--color-white);
+  color:
+    var(--color-white);
 
   font-size: 20px;
-  font-weight: 500;
 }
 
 .about-process-item p {
   max-width: 260px;
 
-  color: var(--color-muted);
+  color:
+    var(--color-muted);
 
   font-size: 13px;
+
   line-height: 1.7;
 }
 
+.about-process-arrow {
+  position: absolute;
 
-/* =========================
-   ANIMATION
-========================= */
+  top: 30px;
+  right: 25px;
 
-@keyframes aboutRotate {
-  from {
-    transform: rotate(0deg);
-  }
+  color:
+    var(--color-gold);
 
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 18px;
+
+  opacity: 0.5;
 }
 
-@keyframes aboutRotateReverse {
-  from {
-    transform: rotate(360deg);
-  }
+.about-process-item:hover
+.about-process-arrow {
+  opacity: 1;
 
-  to {
-    transform: rotate(0deg);
-  }
+  transform:
+    translate(4px, -4px);
 }
 
 
-/* =========================
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes outerRotate {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+
+@keyframes middleRotate {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+}
+
+
+@keyframes innerRotate {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   WORD COUNTER ROTATION
+===================================================== */
+
+@keyframes outerWord {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg);
+  }
+}
+
+
+@keyframes middleWord {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+
+@keyframes innerWord {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(-360deg);
+  }
+}
+
+
+/* =====================================================
+   CENTER
+===================================================== */
+
+@keyframes centerPulse {
+
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.04);
+  }
+}
+
+
+@keyframes centerRing {
+
+  from {
+    transform:
+      rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(180deg)
+      scale(1.04);
+  }
+
+  to {
+    transform:
+      rotate(360deg)
+      scale(1);
+  }
+}
+
+
+/* =====================================================
+   GLOW
+===================================================== */
+
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 900px) {
 
   .about-container {
     grid-template-columns: 1fr;
+
     gap: 70px;
   }
 
   .about-visual {
-    width: min(480px, 90%);
+    width:
+      min(480px, 90%);
   }
 
   .about-process {
@@ -361,7 +742,10 @@
 
   .about-process-item {
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
+
+    border-bottom:
+      1px solid
+      var(--color-border);
   }
 
   .about-process-item:last-child {
@@ -370,9 +754,9 @@
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
@@ -382,6 +766,7 @@
 
   .about-content h2 {
     font-size: 46px;
+
     letter-spacing: -2px;
   }
 
@@ -393,6 +778,30 @@
     width: 100%;
   }
 
+  .orbit-outer {
+    width: 92%;
+    height: 92%;
+  }
+
+  .orbit-middle {
+    width: 68%;
+    height: 68%;
+  }
+
+  .orbit-inner {
+    width: 45%;
+    height: 45%;
+  }
+
+  .orbit-word {
+    min-width: 90px;
+    height: 27px;
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+  }
+
   .about-center {
     width: 125px;
     height: 125px;
@@ -402,15 +811,41 @@
     font-size: 32px;
   }
 
-  .about-floating {
-    font-size: 7px;
-  }
-
   .about-process {
     margin-top: 80px;
   }
 
   .about-process-item {
-    padding: 28px 10px;
+    padding:
+      28px 10px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .about-content h2 {
+    font-size: 41px;
+  }
+
+  .about-center {
+    width: 110px;
+    height: 110px;
+  }
+
+  .about-center strong {
+    font-size: 29px;
+  }
+
+  .orbit-word {
+    min-width: 80px;
+    height: 24px;
+
+    font-size: 5.5px;
   }
 }

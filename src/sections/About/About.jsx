@@ -24,7 +24,7 @@ function About() {
 
       <div className="about-container">
 
-        {/* LEFT CONTENT */}
+        {/* LEFT */}
 
         <div className="about-content">
 
@@ -35,7 +35,7 @@ function About() {
 
           <h2>
             Turning
-            <span> Spaces Into</span>
+            <span>Spaces Into</span>
             Experiences.
           </h2>
 
@@ -60,40 +60,59 @@ function About() {
         </div>
 
 
-        {/* RIGHT VISUAL */}
+        {/* RIGHT 360 ANIMATION */}
 
         <div className="about-visual">
 
-          <div className="about-orbit orbit-one"></div>
-          <div className="about-orbit orbit-two"></div>
-          <div className="about-orbit orbit-three"></div>
+          <div className="about-glow"></div>
 
-          <div className="about-center">
+          <div className="orbit-stage">
 
-            <span className="about-center-small">
-              EXPLORE
-            </span>
+            {/* OUTER ORBIT */}
 
-            <strong>
-              360°
-            </strong>
+            <div className="orbit orbit-outer">
 
-            <span className="about-center-small">
-              YOUR SPACE
-            </span>
+              <div className="orbit-word">
+                INTERACTIVE
+              </div>
 
-          </div>
+            </div>
 
-          <div className="about-floating about-floating-one">
-            INTERACTIVE
-          </div>
 
-          <div className="about-floating about-floating-two">
-            IMMERSIVE
-          </div>
+            {/* MIDDLE ORBIT */}
 
-          <div className="about-floating about-floating-three">
-            DIGITAL
+            <div className="orbit orbit-middle">
+
+              <div className="orbit-word">
+                DIGITAL
+              </div>
+
+            </div>
+
+
+            {/* INNER ORBIT */}
+
+            <div className="orbit orbit-inner">
+
+              <div className="orbit-word">
+                IMMERSIVE
+              </div>
+
+            </div>
+
+
+            {/* CENTER */}
+
+            <div className="about-center">
+
+              <span>EXPLORE</span>
+
+              <strong>360°</strong>
+
+              <span>YOUR SPACE</span>
+
+            </div>
+
           </div>
 
         </div>
@@ -101,12 +120,15 @@ function About() {
       </div>
 
 
-      {/* PROCESS STRIP */}
+      {/* PROCESS */}
 
       <div className="about-process">
 
         {points.map((point) => (
-          <div className="about-process-item" key={point.number}>
+          <div
+            className="about-process-item"
+            key={point.number}
+          >
 
             <span className="about-process-number">
               {point.number}
@@ -114,8 +136,13 @@ function About() {
 
             <div>
               <h3>{point.title}</h3>
+
               <p>{point.text}</p>
             </div>
+
+            <span className="about-process-arrow">
+              ↗
+            </span>
 
           </div>
         ))}

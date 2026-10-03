@@ -17,11 +17,13 @@ function Hero() {
             360° VIRTUAL EXPERIENCES
           </div>
 
+
           <h1>
             Experience
             <span>Space</span>
             Differently.
           </h1>
+
 
           <p>
             We transform real spaces into immersive 360°
@@ -29,8 +31,9 @@ function Hero() {
             explore from anywhere.
           </p>
 
+
           {/* =========================================
-              BUTTONS
+              ONLY ONE BUTTON
           ========================================= */}
 
           <div className="hero-buttons">
@@ -43,15 +46,8 @@ function Hero() {
               <span>↗</span>
             </a>
 
-            <a
-              href="#services"
-              className="hero-secondary-button"
-            >
-              What We Do
-              <span>↓</span>
-            </a>
-
           </div>
+
 
           {/* =========================================
               TRUST
@@ -83,6 +79,7 @@ function Hero() {
         </div>
 
       </div>
+
 
       {/* =========================================
           SCROLL
