@@ -1,3 +1,4 @@
+
 import "./Portfolio.css";
 
 const projects = [
@@ -33,28 +34,30 @@ const projects = [
     tourUrl:
       "https://tours.sp360view.com/tours/JJcq9z6MN",
   },
-];
 
+  {
+    number: "04",
+    category: "REAL ESTATE",
+    title: "Plotting Project",
+    location: "Pune, Maharashtra",
+    description:
+      "Explore the plotting project through an immersive 360° virtual tour and discover the property layout from anywhere.",
+    tourUrl:
+      "https://tours.sp360view.com/tours/zlkbNokoEo",
+  },
+];
 
 function Portfolio() {
   return (
     <section className="portfolio" id="work">
-
       <div className="portfolio-container">
-
-        {/* =========================================
-            HEADER
-        ========================================= */}
-
         <div className="portfolio-header">
-
           <div className="portfolio-label">
             <span></span>
             OUR EXPERIENCE
           </div>
 
           <div className="portfolio-heading-row">
-
             <h2>
               Explore
               <span> Our Spaces.</span>
@@ -65,31 +68,16 @@ function Portfolio() {
               transformed into immersive 360°
               experiences.
             </p>
-
           </div>
-
         </div>
 
-
-        {/* =========================================
-            PROJECTS
-        ========================================= */}
-
         <div className="portfolio-list">
-
           {projects.map((project) => (
-
             <article
               className="portfolio-card"
               key={project.number}
             >
-
-              {/* =====================================
-                  LEFT - 360 TOUR
-              ===================================== */}
-
               <div className="portfolio-tour">
-
                 <iframe
                   src={project.tourUrl}
                   title={`${project.title} 360° Virtual Tour`}
@@ -100,40 +88,23 @@ function Portfolio() {
                 <div className="portfolio-number">
                   {project.number}
                 </div>
-
               </div>
 
-
-              {/* =====================================
-                  RIGHT - INFORMATION
-              ===================================== */}
-
               <div className="portfolio-info">
-
                 <span className="portfolio-category">
                   {project.category}
                 </span>
 
-                <h3>
-                  {project.title}
-                </h3>
+                <h3>{project.title}</h3>
 
                 <div className="portfolio-location">
                   <span>LOCATION</span>
                   {project.location}
                 </div>
 
-                <p>
-                  {project.description}
-                </p>
-
-
-                {/* ===================================
-                    BUTTONS
-                =================================== */}
+                <p>{project.description}</p>
 
                 <div className="portfolio-actions">
-
                   <a
                     href={project.tourUrl}
                     target="_blank"
@@ -151,32 +122,16 @@ function Portfolio() {
                     Let's Create
                     <span>→</span>
                   </a>
-
                 </div>
-
               </div>
-
             </article>
-
           ))}
-
         </div>
-
-
-        {/* =========================================
-            FOOTER LINE
-        ========================================= */}
 
         <div className="portfolio-footer">
-
-          <p>
-            More spaces. More experiences.
-          </p>
-
+          <p>More spaces. More experiences.</p>
         </div>
-
       </div>
-
     </section>
   );
 }
